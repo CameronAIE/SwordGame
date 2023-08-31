@@ -9,7 +9,6 @@ public class Damage : MonoBehaviour
     private float health;
     [SerializeField]
     private float timer;
-    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {

@@ -425,6 +425,7 @@ GameObject:
   - component: {fileID: 4047972025199878}
   - component: {fileID: 95457531584545886}
   - component: {fileID: 397474588769737062}
+  - component: {fileID: 6445260819111278271}
   m_Layer: 0
   m_Name: SwirlLeftSlime
   m_TagString: Enemy
@@ -485,3 +486,16 @@ MonoBehaviour:
   sideSpeed: 5
   forwardSpeed: 0.5
   health: 5
+--- !u!114 &6445260819111278271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931298151966786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e97f0f6f232b545885d2d6fa091ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0

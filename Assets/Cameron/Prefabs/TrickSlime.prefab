@@ -425,6 +425,7 @@ GameObject:
   - component: {fileID: 4047972025199878}
   - component: {fileID: 95457531584545886}
   - component: {fileID: -8969646116454312003}
+  - component: {fileID: -6401738437982902841}
   m_Layer: 0
   m_Name: TrickSlime
   m_TagString: Enemy
@@ -492,3 +493,16 @@ MonoBehaviour:
   - {fileID: 1931298151966786, guid: ec2c4fbe2f67f5844b8acc1035bba713, type: 3}
   - {fileID: 1931298151966786, guid: 4f894e293da788a43a511e520428e9ab, type: 3}
   - {fileID: 1931298151966786, guid: fb3df75a33e0530468740ecffd0a2d71, type: 3}
+--- !u!114 &-6401738437982902841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931298151966786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e97f0f6f232b545885d2d6fa091ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0

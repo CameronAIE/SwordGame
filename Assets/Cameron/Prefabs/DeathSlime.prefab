@@ -275,7 +275,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9c0226bd4324f01bc178cf4a515ef84, type: 2}
+  - {fileID: 2100000, guid: e0e837a1799aa4e448d479e54cf52427, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -426,8 +426,8 @@ GameObject:
   - component: {fileID: 95457531584545886}
   - component: {fileID: -5090538219328103561}
   m_Layer: 0
-  m_Name: BaseSlime
-  m_TagString: Enemy
+  m_Name: DeathSlime
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -424,9 +424,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4047972025199878}
   - component: {fileID: 95457531584545886}
-  - component: {fileID: -5090538219328103561}
+  - component: {fileID: -8969646116454312003}
   m_Layer: 0
-  m_Name: BaseSlime
+  m_Name: TrickSlime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -469,7 +469,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-5090538219328103561
+--- !u!114 &-8969646116454312003
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -478,9 +478,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1931298151966786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eceaca5a9eeda040b713e6456335110, type: 3}
+  m_Script: {fileID: 11500000, guid: 84b24656846eb3e4890522a3442030fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2741832150865109056, guid: 52a1bc906a667c3489ac851ddacc9ae7, type: 3}
-  speed: 2
-  health: 1
+  target: {fileID: 0}
+  speed: 1
+  health: 10
+  timer: 4
+  enemies:
+  - {fileID: 1931298151966786, guid: c888f5776a399454e915895def74eed8, type: 3}
+  - {fileID: 1931298151966786, guid: bc158a48e17a92c49b9659d4e419b9f8, type: 3}
+  - {fileID: 1931298151966786, guid: 3b42cde61b1032a41b22dfe8cd7503e8, type: 3}
+  - {fileID: 1931298151966786, guid: ec2c4fbe2f67f5844b8acc1035bba713, type: 3}
+  - {fileID: 1931298151966786, guid: 4f894e293da788a43a511e520428e9ab, type: 3}
+  - {fileID: 1931298151966786, guid: fb3df75a33e0530468740ecffd0a2d71, type: 3}

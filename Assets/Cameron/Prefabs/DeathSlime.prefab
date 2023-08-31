@@ -425,6 +425,7 @@ GameObject:
   - component: {fileID: 4047972025199878}
   - component: {fileID: 95457531584545886}
   - component: {fileID: -5090538219328103561}
+  - component: {fileID: 5307264542525858650}
   m_Layer: 0
   m_Name: DeathSlime
   m_TagString: Death
@@ -484,3 +485,17 @@ MonoBehaviour:
   target: {fileID: 2741832150865109056, guid: 52a1bc906a667c3489ac851ddacc9ae7, type: 3}
   speed: 2
   health: 1
+--- !u!136 &5307264542525858650
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931298151966786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}

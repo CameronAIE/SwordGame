@@ -37,7 +37,8 @@ public class SphereManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.CompareTag("Enemy")) { other.GetComponent<GameObject>().GetComponent<Damage>(); }
+        if (other.CompareTag("Enemy")) { ObjDamage(other.GetComponent<GameObject>().GetComponent<Damage>().damage); }
+        if (other.CompareTag("Death")) { AddScore(10); Destroy(other.gameObject); }
         
     }
 }

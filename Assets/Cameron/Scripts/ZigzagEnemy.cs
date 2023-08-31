@@ -21,8 +21,9 @@ public class ZigzagEnemy : MonoBehaviour
     void Update()
     {
         //moves the enemy towards the centre
-        //float deltaSpeed = speed * Time.deltaTime;
-        //transform.position = Vector3.MoveTowards(transform.position, target.position, deltaSpeed);
+        
+
+        //i used the swirl code but made a timer change the direction based off of the distance from the centre
         timer -= Time.deltaTime;
         if (right)
         {

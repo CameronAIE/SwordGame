@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Damage : MonoBehaviour
 {
@@ -9,10 +10,13 @@ public class Damage : MonoBehaviour
     private float health;
     [SerializeField]
     private float timer;
+    private SphereManager sm;
+    [SerializeField]
+    private int score;
     // Start is called before the first frame update
     void Start()
     {
-        
+        sm = GameObject.FindObjectOfType<SphereManager>();
     }
 
     // Update is called once per frame
@@ -37,14 +41,18 @@ public class Damage : MonoBehaviour
     {
         if (other.gameObject.tag == "Centre")
         {
-            SphereManager sm = other.gameObject.GetComponent<SphereManager>();
+            sm = other.gameObject.GetComponent<SphereManager>();
             sm.ObjDamage(damage);
             Die();
         }
     }
 
-    void Die()
+    void Die(bool hit)
     {
+        if (!hit)
+        {
+            sm.AddScore(score);
+        }
         Destroy(gameObject);
     }
 }

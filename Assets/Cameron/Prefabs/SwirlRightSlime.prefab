@@ -484,8 +484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2741832150865109056, guid: 52a1bc906a667c3489ac851ddacc9ae7, type: 3}
-  sideSpeed: 2
-  forwardSpeed: 0.25
+  sideSpeed: 5
+  forwardSpeed: 0.5
 --- !u!114 &-4714531458127056085
 MonoBehaviour:
   m_ObjectHideFlags: 0

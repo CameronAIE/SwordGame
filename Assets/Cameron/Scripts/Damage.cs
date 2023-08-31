@@ -32,7 +32,7 @@ public class Damage : MonoBehaviour
             health -= damage;
             if (health <= 0)
             {
-                Die();
+                Die(true);
             }
         }
     }
@@ -43,7 +43,7 @@ public class Damage : MonoBehaviour
         {
             sm = other.gameObject.GetComponent<SphereManager>();
             sm.ObjDamage(damage);
-            Die();
+            Die(false);
         }
     }
 

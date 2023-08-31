@@ -7,7 +7,6 @@ public class SwirlRightEnemy : MonoBehaviour
     public Transform target;
     public float sideSpeed;
     public float forwardSpeed;
-    public float health;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +18,7 @@ public class SwirlRightEnemy : MonoBehaviour
     void Update()
     {
         //moves the enemy towards the centre
-        //float deltaSpeed = speed * Time.deltaTime;
-        //transform.position = Vector3.MoveTowards(transform.position, target.position, deltaSpeed);
+        //as long as side speed is faster than forawrd speed it will move in a cool spiral pattern
         transform.position += transform.right * sideSpeed * Time.deltaTime;
         transform.position += transform.forward * forwardSpeed * Time.deltaTime;
         // makes the enemy look at the centre of the world and has them be the right way up its in upfate incase the sword moves it

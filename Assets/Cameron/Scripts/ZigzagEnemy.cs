@@ -7,7 +7,6 @@ public class ZigzagEnemy : MonoBehaviour
     public Transform target;
     public float sideSpeed;
     public float forwardSpeed;
-    public float health;
     private bool right;
     private float timer;
     public float zag;

@@ -7,7 +7,6 @@ public class TimedEnemy : MonoBehaviour
 
     public Transform target;
     public float speed;
-    public float health;
     public float timer;
     public Material hittable;
     public Material unhittable;

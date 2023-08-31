@@ -6,7 +6,6 @@ public class BaseEnemy : MonoBehaviour
 {
     public Transform target;
     public float speed;
-    public float health;
 
     // Start is called before the first frame update
     void Start()

@@ -6,7 +6,6 @@ public class TrickEnemy : MonoBehaviour
 {
     public Transform target;
     public float speed;
-    public float health;
     public float timer;
     private float realTimer;
     public GameObject[] enemies;

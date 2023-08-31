@@ -7,7 +7,6 @@ public class SwirlLeftEnemy : MonoBehaviour
     public Transform target;
     public float sideSpeed;
     public float forwardSpeed;
-    public float health;
 
     // Start is called before the first frame update
     void Start()

@@ -486,7 +486,6 @@ MonoBehaviour:
   target: {fileID: 2741832150865109056, guid: 52a1bc906a667c3489ac851ddacc9ae7, type: 3}
   sideSpeed: 2
   forwardSpeed: 0.25
-  health: 5
 --- !u!114 &-4714531458127056085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +499,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  health: 0
+  timer: 0
 --- !u!136 &3991311307698833288
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -508,7 +509,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931298151966786}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1

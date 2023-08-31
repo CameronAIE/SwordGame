@@ -493,6 +493,8 @@ MonoBehaviour:
   - {fileID: 1931298151966786, guid: ec2c4fbe2f67f5844b8acc1035bba713, type: 3}
   - {fileID: 1931298151966786, guid: 4f894e293da788a43a511e520428e9ab, type: 3}
   - {fileID: 1931298151966786, guid: fb3df75a33e0530468740ecffd0a2d71, type: 3}
+  - {fileID: 1931298151966786, guid: ac60dae672018b54ebb3ba79e33231ca, type: 3}
+  - {fileID: 1931298151966786, guid: 1559f8bc286398c4c8e3f9d7d7925114, type: 3}
 --- !u!114 &-6401738437982902841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   health: 0
-  timer: 0
+  ITime: 0
+  score: 0
 --- !u!136 &1787037864111454999
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -519,6 +522,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}

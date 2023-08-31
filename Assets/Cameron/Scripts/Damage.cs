@@ -9,7 +9,7 @@ public class Damage : MonoBehaviour
     [SerializeField]
     private float health;
     [SerializeField]
-    private float timer;
+    private float ITime;
     private SphereManager sm;
     [SerializeField]
     private int score;
@@ -22,12 +22,12 @@ public class Damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
+        ITime -= Time.deltaTime;
     }
 
     void TakeDamage(float damage)
     {
-        if (timer <= 0)
+        if (ITime <= 0)
         {
             health -= damage;
             if (health <= 0)

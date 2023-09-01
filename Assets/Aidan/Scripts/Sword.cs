@@ -26,12 +26,7 @@ public class Sword : MonoBehaviour
         Vector3 swordPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
   Input.mousePosition.y, Camera.main.nearClipPlane + 9));
         //updates the current position of the sword
-
-        //Debug.Log(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
-  //Input.mousePosition.y, Camera.main.nearClipPlane)));
         hj.connectedAnchor = swordPos;
-
-        //Debug.Log(hj.velocity);
 
     }
 
@@ -43,7 +38,7 @@ public class Sword : MonoBehaviour
         }
         else if (collision.transform.CompareTag("Death"))
         {
-            SphereManager.ObjDamage(collision.transform.GetComponent<Damage>().damage);
+            //SphereManager.ObjDamage(collision.transform.GetComponent<Damage>().damage);
             Debug.Log("base has taken damage!");
         }
     }

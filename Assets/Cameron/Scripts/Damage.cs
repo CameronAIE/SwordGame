@@ -13,6 +13,8 @@ public class Damage : MonoBehaviour
     private SphereManager sm;
     [SerializeField]
     private int score;
+    [SerializeField]
+    private GameObject particles;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +25,13 @@ public class Damage : MonoBehaviour
     void Update()
     {
         ITime -= Time.deltaTime;
+        //keeps it on the ground becuase the physics can be weird
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
     void TakeDamage(float damage)
     {
+        //the itime is so the sword can keep calling if they keep colliding 
         if (ITime <= 0)
         {
             health -= damage;
@@ -39,6 +44,7 @@ public class Damage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //deals damage to the centre
         if (other.gameObject.tag == "Centre")
         {
             sm = other.gameObject.GetComponent<SphereManager>();
@@ -53,6 +59,7 @@ public class Damage : MonoBehaviour
         {
             sm.AddScore(score);
         }
+        Instantiate(particles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

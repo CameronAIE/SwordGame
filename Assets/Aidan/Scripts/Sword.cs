@@ -8,6 +8,7 @@ public class Sword : MonoBehaviour
     private Rigidbody rb;
     private MeshCollider col;
     [SerializeField] private SphereManager SphereManager;
+    [SerializeField] private float smoothVal = 6f; //greater = less faster smoothing
 
 
     // Start is called before the first frame update
@@ -25,8 +26,8 @@ public class Sword : MonoBehaviour
         //the position the sword is required to go
         Vector3 swordPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
   Input.mousePosition.y, Camera.main.nearClipPlane + 9));
-        //updates the current position of the sword
-        hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, swordPos, Time.deltaTime * 4f);
+        //updates the current position of the sword and smooths it with linear interpolation
+        hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, swordPos, Time.deltaTime * smoothVal);
 
     }
 

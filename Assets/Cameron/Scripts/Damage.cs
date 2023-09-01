@@ -29,7 +29,7 @@ public class Damage : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         //the itime is so the sword can keep calling if they keep colliding 
         if (ITime <= 0)

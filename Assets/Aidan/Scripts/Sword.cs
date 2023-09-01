@@ -5,10 +5,15 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
     private HingeJoint hj;
-    private Rigidbody rb;
+    private Transform pivot;
     private MeshCollider col;
     [SerializeField] private SphereManager SphereManager;
-    [SerializeField] private float smoothVal = 6f; //greater = less faster smoothing
+    private MeleeWeaponTrail ass;
+    [SerializeField] private float smoothVal = 6f; //greater = faster smoothing
+    [SerializeField] private float defaultSize = 1f; //The size the sword will rest to if no size modification is active
+
+    private float sizeTimer = 0;
+    private float sizeVal = 0;
 
 
     // Start is called before the first frame update
@@ -16,7 +21,7 @@ public class Sword : MonoBehaviour
     {
         //gets required components
         hj = transform.GetComponentInParent<HingeJoint>();
-        rb = GetComponent<Rigidbody>();
+        pivot = transform.parent;
         col = GetComponent<MeshCollider>();
     }
 
@@ -28,6 +33,31 @@ public class Sword : MonoBehaviour
   Input.mousePosition.y, Camera.main.nearClipPlane + 9));
         //updates the current position of the sword and smooths it with linear interpolation
         hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, swordPos, Time.deltaTime * smoothVal);
+        
+        //if sizetimer (set by GrowSword function) is greater than 0, increase the size of the sword via linear interpolation
+        if(sizeTimer > 0)
+        {
+            sizeTimer -= Time.deltaTime; //count down the timer
+            float lerp = Mathf.Lerp(pivot.localScale.x, sizeVal, Time.deltaTime * 2f);
+            pivot.localScale = new(lerp, 1,1);
+        }
+        //else return to the regular size using the same method
+        else
+        {
+            float lerp = Mathf.Lerp(pivot.localScale.x, defaultSize, Time.deltaTime * 2f);
+            pivot.localScale = new(lerp, 1, 1);
+        }
+
+
+        //Debug inputs for testing
+        if (Input.GetMouseButton(0))
+        {
+            GrowSword(3f, 5f);
+        }
+        if (Input.GetMouseButton(1))
+        {
+            GrowSword(0.5f, 5f);
+        }
 
     }
 
@@ -44,13 +74,22 @@ public class Sword : MonoBehaviour
         }
         else if (collision.transform.CompareTag("Death"))
         {
-            //SphereManager.ObjDamage(collision.transform.GetComponent<Damage>().damage);
-
             //Deals damage to base 
 
+            //SphereManager.ObjDamage(collision.transform.GetComponent<Damage>().damage);
             Debug.Log("base has taken damage!");
         }
     }
 
+    /// <summary>
+    /// Grows the sword to a specified size for a set amount of time
+    /// </summary>
+    /// <param name="size">Size of the sword measured in scale.</param>
+    /// <param name="time">Time of powerup measured in seconds.</param>
+    public void GrowSword(float size, float time)
+    {
+        sizeVal = size;
+        sizeTimer = time;
+    }
 
 }

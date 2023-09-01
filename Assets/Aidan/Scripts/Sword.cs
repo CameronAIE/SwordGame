@@ -26,7 +26,7 @@ public class Sword : MonoBehaviour
         Vector3 swordPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
   Input.mousePosition.y, Camera.main.nearClipPlane + 9));
         //updates the current position of the sword
-        hj.connectedAnchor = swordPos;
+        hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, swordPos, Time.deltaTime * 4f);
 
     }
 
@@ -34,11 +34,19 @@ public class Sword : MonoBehaviour
     {
         if (collision.transform.CompareTag("Enemy"))
         {
-            collision.transform.GetComponent<Damage>().TakeDamage(1);
+            Debug.Log("Damage dealt: " + Mathf.Abs(hj.velocity));
+            
+
+            //gets the component of the collided object and then deals damage based on angular velocity
+            collision.transform.GetComponent<Damage>().TakeDamage(Mathf.Abs(hj.velocity));
+
         }
         else if (collision.transform.CompareTag("Death"))
         {
             //SphereManager.ObjDamage(collision.transform.GetComponent<Damage>().damage);
+
+            //Deals damage to base 
+
             Debug.Log("base has taken damage!");
         }
     }

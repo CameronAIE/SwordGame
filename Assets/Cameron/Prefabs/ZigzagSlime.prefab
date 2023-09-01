@@ -503,6 +503,7 @@ MonoBehaviour:
   health: 0
   ITime: 0
   score: 0
+  particles: {fileID: 1337198075554910, guid: fb1dcd5325950964c8806dfd9f59c2f4, type: 3}
 --- !u!136 &-284649643725991720
 CapsuleCollider:
   m_ObjectHideFlags: 0

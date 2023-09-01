@@ -19,7 +19,7 @@ public class Spawn : MonoBehaviour
 
     void SpawnEnemy()
     {
-        //spawn random enemy
+        //spawn random enemy from array
         int choice = Random.Range(0, enemies.Length);
         Instantiate(enemies[choice], transform.position, transform.rotation);
     }

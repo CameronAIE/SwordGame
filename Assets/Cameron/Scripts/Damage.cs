@@ -19,7 +19,6 @@ public class Damage : MonoBehaviour
     void Start()
     {
         sm = GameObject.FindObjectOfType<SphereManager>();
-        Die(true);
     }
 
     // Update is called once per frame

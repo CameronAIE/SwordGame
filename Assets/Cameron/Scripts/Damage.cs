@@ -12,8 +12,7 @@ public class Damage : MonoBehaviour
     private float iTime;
     private float realITime;
     private SphereManager sm;
-    [SerializeField]
-    private int score;
+    public int score;
     [SerializeField]
     private GameObject particles;
     // Start is called before the first frame update
@@ -46,13 +45,7 @@ public class Damage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //deals damage to the centre
-        if (other.gameObject.tag == "Centre")
-        {
-            sm = other.gameObject.GetComponent<SphereManager>();
-            sm.ObjDamage(damage);
-            Die(false);
-        } else if (other.gameObject.tag == "Laser")
+        if (other.gameObject.tag == "Laser")
         {
             Laser laserScript = other.gameObject.GetComponent<Laser>();
             TakeDamage(laserScript.damage);
@@ -60,9 +53,9 @@ public class Damage : MonoBehaviour
         }
     }
 
-    void Die(bool hit)
+    public void Die(bool hit)
     {
-        if (!hit)
+        if (hit)
         {
             sm.AddScore(score);
         }

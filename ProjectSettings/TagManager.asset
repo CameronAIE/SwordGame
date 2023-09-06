@@ -8,6 +8,7 @@ TagManager:
   - Centre
   - Unhittable
   - Death
+  - Laser
   layers:
   - Default
   - TransparentFX

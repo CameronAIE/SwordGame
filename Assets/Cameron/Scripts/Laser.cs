@@ -8,6 +8,7 @@ public class Laser : MonoBehaviour
     private float speed;
     [SerializeField]
     private float lifeTime;
+    public float damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,18 +20,9 @@ public class Laser : MonoBehaviour
     {
         transform.position += transform.up * speed * Time.deltaTime;
         lifeTime -= Time.deltaTime;
-        if (lifeTime <= 0)
-        {
-            Destroy(gameObject);
-        }
+        
+        Destroy(gameObject, lifeTime);
+        
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            collision.gameObject.GetComponent<Damage>().TakeDamage(4);
-            Destroy(gameObject);
-        }
-    }
 }

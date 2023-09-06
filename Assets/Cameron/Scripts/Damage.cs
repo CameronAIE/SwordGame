@@ -52,6 +52,11 @@ public class Damage : MonoBehaviour
             sm = other.gameObject.GetComponent<SphereManager>();
             sm.ObjDamage(damage);
             Die(false);
+        } else if (other.gameObject.tag == "Laser")
+        {
+            Laser laserScript = other.gameObject.GetComponent<Laser>();
+            TakeDamage(laserScript.damage);
+            Destroy(laserScript.gameObject);
         }
     }
 

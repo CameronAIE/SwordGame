@@ -53,9 +53,9 @@ public class Damage : MonoBehaviour
         }
     }
 
-    public void Die(bool hit)
+    public void Die(bool addScore)
     {
-        if (hit)
+        if (addScore)
         {
             sm.AddScore(score);
         }

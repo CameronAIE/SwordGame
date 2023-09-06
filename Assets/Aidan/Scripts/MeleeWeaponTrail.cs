@@ -86,6 +86,7 @@ public class MeleeWeaponTrail : MonoBehaviour
 		_trailObject.transform.localScale = Vector3.one;
 		_trailObject.AddComponent(typeof(MeshFilter));
 		_trailObject.AddComponent(typeof(MeshRenderer));
+		_trailObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 		_trailObject.GetComponent<Renderer>().material = _material;
 
 		_trailMesh = new Mesh();

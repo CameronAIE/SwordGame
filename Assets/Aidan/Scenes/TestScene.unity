@@ -874,6 +874,7 @@ MonoBehaviour:
   smoothVal: 8
   defaultSize: 1
   sparks: {fileID: 1599599837}
+  powerups: 00
 --- !u!114 &2135021512
 MonoBehaviour:
   m_ObjectHideFlags: 0

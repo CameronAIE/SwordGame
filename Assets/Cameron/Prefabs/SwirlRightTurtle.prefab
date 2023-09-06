@@ -518,7 +518,6 @@ GameObject:
   - component: {fileID: -6602944884575460142}
   - component: {fileID: 809049399658789828}
   - component: {fileID: 6467829779155941253}
-  - component: {fileID: 6092239265794733165}
   - component: {fileID: 7519888362824367109}
   m_Layer: 0
   m_Name: SwirlRightTurtle
@@ -611,21 +610,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &6092239265794733165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524411113276028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac015df03148a940ba39c0818bc1af5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  sideSpeed: 5
-  forwardSpeed: 0.5
 --- !u!114 &7519888362824367109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,7 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504846579c2b8bc48ac2589e4180ff61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 2741832150865109056, guid: 52a1bc906a667c3489ac851ddacc9ae7, type: 3}
   sideSpeed: 5
   forwardSpeed: 0.5
 --- !u!1 &1532652994627396

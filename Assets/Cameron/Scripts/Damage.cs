@@ -9,7 +9,8 @@ public class Damage : MonoBehaviour
     [SerializeField]
     private float health;
     [SerializeField]
-    private float ITime;
+    private float iTime;
+    private float realITime;
     private SphereManager sm;
     [SerializeField]
     private int score;
@@ -24,7 +25,7 @@ public class Damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ITime -= Time.deltaTime;
+        realITime -= Time.deltaTime;
         //keeps it on the ground becuase the physics can be weird
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
@@ -32,9 +33,10 @@ public class Damage : MonoBehaviour
     public void TakeDamage(float damage)
     {
         //the itime is so the sword can keep calling if they keep colliding 
-        if (ITime <= 0)
+        if (realITime <= 0)
         {
             health -= damage;
+            realITime = iTime;
             if (health <= 0)
             {
                 Die(true);

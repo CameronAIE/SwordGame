@@ -8,9 +8,10 @@ public class Sword : MonoBehaviour
     private Transform pivot;
     private MeshCollider col;
     [SerializeField] private SphereManager SphereManager;
-    private MeleeWeaponTrail ass;
     [SerializeField] private float smoothVal = 6f; //greater = faster smoothing
     [SerializeField] private float defaultSize = 1f; //The size the sword will rest to if no size modification is active
+    [SerializeField] ParticleSystem sparks;
+
 
     private float sizeTimer = 0;
     private float sizeVal = 0;
@@ -48,6 +49,9 @@ public class Sword : MonoBehaviour
             pivot.localScale = new(lerp, 1, 1);
         }
 
+        //enables spark particle effects if the sword is going sufficiently fast
+        ParticleSystem.EmissionModule emission = sparks.emission;
+        emission.enabled = Mathf.Abs(hj.velocity) > 500;
 
         //Debug inputs for testing
         if (Input.GetMouseButton(0))

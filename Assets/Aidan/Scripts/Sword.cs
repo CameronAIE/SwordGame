@@ -68,7 +68,7 @@ public class Sword : MonoBehaviour
 
                 newLaser.transform.parent = null;
                 
-                laserShoot = 0.1f;
+                laserShoot = 0.15f;
             }
             else 
             {

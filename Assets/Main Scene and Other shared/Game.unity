@@ -669,7 +669,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &501785046
 PrefabInstance:
@@ -1391,6 +1391,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5617887862300743450, guid: 9ef0c5576bd2c1440a0071535c432b2e, type: 3}
   m_PrefabInstance: {fileID: 764057266}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &772785427 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2190441492602809825, guid: d481ac99edea7f34d8fe3c7625d2896e, type: 3}
+  m_PrefabInstance: {fileID: 211401264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65a0c38c12d9a644a9b334c6e9176dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &790508419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1673,7 +1684,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &1096013860
 PrefabInstance:
@@ -1726,6 +1737,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: SphereManager
+      value: 
+      objectReference: {fileID: 772785427}
     - target: {fileID: 5025281764278814705, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1801,13 +1816,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3509766074881336413, guid: d117df6b6b9b4334c81bf1d07588d3b9, type: 3}
+      propertyPath: SphereManager
+      value: 
+      objectReference: {fileID: 772785427}
     - target: {fileID: 3509766075243713733, guid: d117df6b6b9b4334c81bf1d07588d3b9, type: 3}
       propertyPath: m_Name
       value: SwordTest
       objectReference: {fileID: 0}
     - target: {fileID: 3509766075243713786, guid: d117df6b6b9b4334c81bf1d07588d3b9, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3509766075243713786, guid: d117df6b6b9b4334c81bf1d07588d3b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2286,7 +2305,7 @@ Transform:
   - {fileID: 1122383765}
   - {fileID: 1326811061}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1855945614
 PrefabInstance:

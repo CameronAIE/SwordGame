@@ -17,7 +17,7 @@ public class TimedEnemy : MonoBehaviour
     void Start()
     {
         //the actual game object doesnt have the materail to chaange the colour instead its one of its children so we just turn the red one off and on
-        AudioSource audio = gameObject.GetComponentInChildren<AudioSource>();
+        Identifier audio = gameObject.GetComponentInChildren<Identifier>();
         redColour = audio.gameObject;
         realTimer = timer;
     }

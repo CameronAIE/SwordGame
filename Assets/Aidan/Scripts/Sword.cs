@@ -11,7 +11,11 @@ public class Sword : MonoBehaviour
     [SerializeField] private float smoothVal = 6f; //greater = faster smoothing
     [SerializeField] private float defaultSize = 1f; //The size the sword will rest to if no size modification is active
     [SerializeField] ParticleSystem sparks;
+    [SerializeField] GameObject laser;
 
+    public bool[] powerups; //0 = laser
+                            //1 =...
+    private float laserShoot = 0;
 
     private float sizeTimer = 0;
     private float sizeVal = 0;
@@ -52,6 +56,26 @@ public class Sword : MonoBehaviour
         //enables spark particle effects if the sword is going sufficiently fast
         ParticleSystem.EmissionModule emission = sparks.emission;
         emission.enabled = Mathf.Abs(hj.velocity) > 500;
+
+        Debug.Log(hj.angle);
+
+        if (powerups[0])
+        {
+            if (laserShoot <= 0)
+            {
+                Transform tip = transform.GetChild(0);
+                GameObject newLaser = Instantiate(laser, tip);
+
+                newLaser.transform.parent = null;
+                
+                laserShoot = 0.1f;
+            }
+            else 
+            {
+                laserShoot -= Time.deltaTime;
+            }
+            //Instantiate(laser);
+        }
 
         //Debug inputs for testing
         if (Input.GetMouseButton(0))

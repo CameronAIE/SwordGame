@@ -14,6 +14,7 @@ public class SphereManager : MonoBehaviour
     {
         Health = 100;
         Score = 0;
+        healthText.text = $"Health\n{Health} | 100";
     }
 
     /// <summary>
@@ -37,8 +38,16 @@ public class SphereManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy")) { ObjDamage(other.gameObject.GetComponent<Damage>().damage); }
-        if (other.CompareTag("Death")) { AddScore(10); Destroy(other.gameObject); }
+        if (other.CompareTag("Enemy")) 
+        { 
+            ObjDamage(other.gameObject.GetComponent<Damage>().damage); 
+            other.gameObject.GetComponent<Damage>().Die(false);
+        }
+        if (other.CompareTag("Death")) 
+        { 
+            AddScore(other.gameObject.GetComponent<Damage>().score);
+            other.gameObject.GetComponent<Damage>().Die(true); 
+        }
         
     }
 }

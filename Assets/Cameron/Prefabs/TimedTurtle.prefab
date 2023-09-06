@@ -589,10 +589,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e97f0f6f232b545885d2d6fa091ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  health: 0
-  ITime: 0
-  score: 0
+  damage: 4
+  health: 700
+  iTime: 2
+  score: 40
   particles: {fileID: 1337198075554910, guid: fb1dcd5325950964c8806dfd9f59c2f4, type: 3}
 --- !u!136 &809049399658789828
 CapsuleCollider:

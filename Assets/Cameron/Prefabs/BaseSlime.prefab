@@ -428,7 +428,6 @@ GameObject:
   - component: {fileID: -6285479009900558104}
   - component: {fileID: 4322393325749026966}
   - component: {fileID: -7516095772500130944}
-  - component: {fileID: 5355997296932717820}
   m_Layer: 0
   m_Name: BaseSlime
   m_TagString: Enemy
@@ -499,10 +498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e97f0f6f232b545885d2d6fa091ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  health: 0
-  ITime: 0
-  score: 0
+  damage: 2
+  health: 400
+  iTime: 2
+  score: 20
   particles: {fileID: 1337198075554910, guid: fb1dcd5325950964c8806dfd9f59c2f4, type: 3}
 --- !u!136 &4322393325749026966
 CapsuleCollider:
@@ -534,17 +533,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!136 &5355997296932717820
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931298151966786}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.6
-  m_Height: 1.6
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.25, z: 0}

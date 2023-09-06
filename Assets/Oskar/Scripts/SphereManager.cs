@@ -45,7 +45,6 @@ public class SphereManager : MonoBehaviour
         }
         if (other.CompareTag("Death")) 
         { 
-            AddScore(other.gameObject.GetComponent<Damage>().score);
             other.gameObject.GetComponent<Damage>().Die(true); 
         }
         

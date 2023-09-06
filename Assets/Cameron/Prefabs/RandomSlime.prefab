@@ -485,10 +485,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e97f0f6f232b545885d2d6fa091ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  health: 0
-  iTime: 0
-  score: 0
+  damage: 8
+  health: 1300
+  iTime: 2
+  score: 50
   particles: {fileID: 1337198075554910, guid: fb1dcd5325950964c8806dfd9f59c2f4, type: 3}
 --- !u!136 &4322393325749026966
 CapsuleCollider:

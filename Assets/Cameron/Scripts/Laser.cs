@@ -5,7 +5,9 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     [SerializeField]
-    public float speed;
+    private float speed;
+    [SerializeField]
+    private float lifeTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,11 @@ public class Laser : MonoBehaviour
     void Update()
     {
         transform.position += transform.up * speed * Time.deltaTime;
+        lifeTime -= Time.deltaTime;
+        if (lifeTime <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

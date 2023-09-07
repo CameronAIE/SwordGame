@@ -57,10 +57,20 @@ public class GameManager : MonoBehaviour
                         break;
                     }
                 }
-
+                if (SphereManager.IsDead())
+                {
+                    gameState = GameState.Killed;
+                }
+                if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+                {
+                    PauseGame();
+                }
                 break;
             case GameState.Paused:
-                
+                if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+                {
+                    PauseGame();
+                }
                 break;
             case GameState.Killed:
 

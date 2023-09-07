@@ -6,15 +6,17 @@ using UnityEngine;
 public class SphereManager : MonoBehaviour
 {
     [SerializeField]
-    private int Score, Health;
+    private int Score, Health, Highscore;
     [SerializeField]
-    private TextMeshProUGUI healthText;
+    private TextMeshProUGUI healthText, scoreText;
     // Start is called before the first frame update
     void Start()
     {
         Health = 100;
         Score = 0;
         healthText.text = $"Health\n{Health} | 100";
+        Highscore = PlayerPrefs.GetInt("highscore");
+        scoreText.text = $"Highscore:\n{Highscore}\nScore:\n{Score}";
     }
 
     /// <summary>
@@ -34,6 +36,16 @@ public class SphereManager : MonoBehaviour
     public void AddScore(int score)
     {
         Score += score;
+        if (Score > PlayerPrefs.GetInt("highscore"))
+        {
+            PlayerPrefs.SetInt("highscore", Score);
+        }
+        scoreText.text = $"Highscore:\n{Highscore}\nScore:\n{Score}";
+    }
+
+    public bool IsDead()
+    {
+        return (Health <= 0) ? true : false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,5 +60,13 @@ public class SphereManager : MonoBehaviour
             other.gameObject.GetComponent<Damage>().Die(true); 
         }
         
+    }
+
+    private void OnDestroy()
+    {
+        if (Score > Highscore)
+        {
+            PlayerPrefs.SetInt("highscore", Score);
+        }
     }
 }

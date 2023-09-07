@@ -980,10 +980,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3835509080843206495, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: scalingMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: SphereManager
       value: 
       objectReference: {fileID: 2111168757}
+    - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: powerups.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3835509082128279516, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1027,6 +1035,14 @@ PrefabInstance:
     - target: {fileID: 3835509082128279516, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835509082128279517, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: m_Motor.force
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835509082128279517, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: m_Motor.targetVelocity
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 3835509082128279523, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: m_Name

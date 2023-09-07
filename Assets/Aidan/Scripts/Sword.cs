@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class Sword : MonoBehaviour
     [Header("Values")]
     public bool[] powerups; //0 = laser
                             //1 = lighter sword
+                            //2 = autospin
     [SerializeField] private float smoothVal = 6f; //greater = faster smoothing
     [SerializeField] private float defaultSize = 1f; //The size the sword will rest to if no size modification is active
     [Header("Prefabs")]
@@ -37,14 +39,21 @@ public class Sword : MonoBehaviour
         pivot = transform.parent;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         //the position the sword is required to go
         Vector3 swordPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
   Input.mousePosition.y, Camera.main.nearClipPlane + 9));
         //updates the current position of the sword and smooths it with linear interpolation
         hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, swordPos, Time.deltaTime * smoothVal);
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+        
         
         //if sizetimer (set by GrowSword function) is greater than 0, increase the size of the sword via linear interpolation
         if(sizeTimer > 0)
@@ -78,7 +87,7 @@ public class Sword : MonoBehaviour
                 //unassigns the parent
                 newLaser.transform.parent = null;
                 //sets a timer for the next shot
-                laserShoot = 0.15f;
+                laserShoot = 0.1f;
             }
             else 
             {
@@ -86,6 +95,8 @@ public class Sword : MonoBehaviour
                 laserShoot -= Time.deltaTime;
             }
         }
+
+        //Time.timeScale = Mathf.Lerp(Time.timeScale, 1, Time.deltaTime * 5f);
 
         //Debug inputs for testing
          if (Input.GetMouseButton(0))
@@ -106,7 +117,11 @@ public class Sword : MonoBehaviour
              if (!powerups[1]) EnablePowerUp(1);
              else DisablePowerUp(1);
          }
-
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (!powerups[2]) EnablePowerUp(2);
+            else DisablePowerUp(2);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -114,9 +129,10 @@ public class Sword : MonoBehaviour
         
         if (collision.transform.CompareTag("Enemy"))
         {
+            //Time.timeScale = 0.01f;
             Debug.Log("Damage dealt: " + Mathf.Abs(hj.velocity));
 
-            GameObject slash = Instantiate(slashEffect, collision.transform.position, Quaternion.identity);
+            GameObject slash = Instantiate(slashEffect, new(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z - 1f), Quaternion.identity);
             Destroy(slash, 0.25f);
             //gets the component of the collided object and then deals damage based on angular velocity
             collision.transform.GetComponent<Damage>().TakeDamage(Mathf.Abs(hj.velocity));
@@ -163,6 +179,10 @@ public class Sword : MonoBehaviour
                 smoothVal = 10;
                 powerups[1] = true;
                 break;
+            case 2:
+                powerups[2] = true;
+                hj.useMotor = true;
+                break;
             default:
                 break;
         }
@@ -187,6 +207,10 @@ public class Sword : MonoBehaviour
                 smoothVal = 8;
                 powerups[1] = false;
                 break;
+            case 2:
+                powerups[2] = false;
+                hj.useMotor = false;
+                break ;
             default:
                 break;
         }

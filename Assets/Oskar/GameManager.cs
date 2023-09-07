@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
                 {
                     spawnTimer = 0;
                     enemiesList.Add(spawnLocations[Random.Range(0, spawnLocations.Length)].SpawnEnemy());
-                    difficulty -= 0.005f;
+                    difficulty -= 0.001f;
                     Mathf.Clamp(spawnTimer, 0.2f, 100);
                 }
 

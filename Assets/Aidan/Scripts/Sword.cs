@@ -20,10 +20,6 @@ public class Sword : MonoBehaviour
     [SerializeField] ParticleSystem laserFire;
     [SerializeField] ParticleSystem lightEffect;
 
-
-
-
-
     private float laserShoot = 0;
 
     private float sizeTimer = 0;
@@ -37,7 +33,6 @@ public class Sword : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         hj = transform.GetComponentInParent<HingeJoint>();
         pivot = transform.parent;
-        //col = GetComponent<MeshCollider>();
     }
 
     // Update is called once per frame
@@ -91,24 +86,24 @@ public class Sword : MonoBehaviour
         }
 
         //Debug inputs for testing
-        if (Input.GetMouseButton(0))
-        {
-            GrowSword(3f, 5f);
-        }
-        if (Input.GetMouseButton(1))
-        {
-            GrowSword(0.5f, 5f);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            if (!powerups[0]) EnablePowerUp(0);
-            else DisablePowerUp(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            if (!powerups[1]) EnablePowerUp(1);
-            else DisablePowerUp(1);
-        }
+        // if (Input.GetMouseButton(0))
+        // {
+        //     GrowSword(3f, 5f);
+        // }
+        // if (Input.GetMouseButton(1))
+        // {
+        //     GrowSword(0.5f, 5f);
+        // }
+        // if (Input.GetKeyDown(KeyCode.Alpha1))
+        // {
+        //     if (!powerups[0]) EnablePowerUp(0);
+        //     else DisablePowerUp(0);
+        // }
+        // if (Input.GetKeyDown(KeyCode.Alpha2))
+        // {
+        //     if (!powerups[1]) EnablePowerUp(1);
+        //     else DisablePowerUp(1);
+        // }
 
     }
 

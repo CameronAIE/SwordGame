@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Sword : MonoBehaviour
@@ -15,10 +16,11 @@ public class Sword : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] GameObject laser;
     [Header("Assigned objects")]
-    [SerializeField] private SphereManager SphereManager;
+    [SerializeField] private SphereManager SphereManager; //prehaps I could compress this?
     [SerializeField] ParticleSystem sparks;
     [SerializeField] ParticleSystem laserFire;
     [SerializeField] ParticleSystem lightEffect;
+    [SerializeField] GameObject slashEffect;
 
     private float laserShoot = 0;
 
@@ -86,34 +88,36 @@ public class Sword : MonoBehaviour
         }
 
         //Debug inputs for testing
-        // if (Input.GetMouseButton(0))
-        // {
-        //     GrowSword(3f, 5f);
-        // }
-        // if (Input.GetMouseButton(1))
-        // {
-        //     GrowSword(0.5f, 5f);
-        // }
-        // if (Input.GetKeyDown(KeyCode.Alpha1))
-        // {
-        //     if (!powerups[0]) EnablePowerUp(0);
-        //     else DisablePowerUp(0);
-        // }
-        // if (Input.GetKeyDown(KeyCode.Alpha2))
-        // {
-        //     if (!powerups[1]) EnablePowerUp(1);
-        //     else DisablePowerUp(1);
-        // }
+         if (Input.GetMouseButton(0))
+         {
+             GrowSword(3f, 5f);
+         }
+         if (Input.GetMouseButton(1))
+         {
+             GrowSword(0.5f, 5f);
+         }
+         if (Input.GetKeyDown(KeyCode.Alpha1))
+         {
+             if (!powerups[0]) EnablePowerUp(0);
+             else DisablePowerUp(0);
+         }
+         if (Input.GetKeyDown(KeyCode.Alpha2))
+         {
+             if (!powerups[1]) EnablePowerUp(1);
+             else DisablePowerUp(1);
+         }
 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if (collision.transform.CompareTag("Enemy"))
         {
             Debug.Log("Damage dealt: " + Mathf.Abs(hj.velocity));
-            
 
+            GameObject slash = Instantiate(slashEffect, collision.transform.position, Quaternion.identity);
+            Destroy(slash, 0.25f);
             //gets the component of the collided object and then deals damage based on angular velocity
             collision.transform.GetComponent<Damage>().TakeDamage(Mathf.Abs(hj.velocity));
 

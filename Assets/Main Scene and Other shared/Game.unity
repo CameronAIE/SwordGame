@@ -891,6 +891,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3835509082128279518, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3835509082128279523, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: m_Name
       value: SwordTest 3
@@ -2074,7 +2078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: difficulty
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: SphereManager
@@ -2082,7 +2086,7 @@ PrefabInstance:
       objectReference: {fileID: 772785427}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: enemiesList.Array.size
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: spawnLocations.Array.size

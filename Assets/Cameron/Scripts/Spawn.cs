@@ -30,16 +30,16 @@ public class Spawn : MonoBehaviour
         }
     }
 
-    public void SpawnEnemy()
+    public GameObject SpawnEnemy()
     {
         //spawn random enemy from array
         int choice = Random.Range(0, avalibileEnemys);
-        Instantiate(enemies[choice], transform.position, transform.rotation);
+        return Instantiate(enemies[choice], transform.position, transform.rotation);
     }
 
-    public void SpawnSpecificEnenmy(int enemy)
+    public GameObject SpawnSpecificEnenmy(int enemy)
     {
         int realEnemy = enemy % enemies.Length;
-        Instantiate(enemies[realEnemy], transform.position, transform.rotation);
+        return Instantiate(enemies[realEnemy], transform.position, transform.rotation);
     }
 }

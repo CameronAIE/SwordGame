@@ -36,4 +36,10 @@ public class Spawn : MonoBehaviour
         int choice = Random.Range(0, avalibileEnemys);
         Instantiate(enemies[choice], transform.position, transform.rotation);
     }
+
+    public void SpawnSpecificEnenmy(int enemy)
+    {
+        int realEnemy = enemy % enemies.Length;
+        Instantiate(enemies[realEnemy], transform.position, transform.rotation);
+    }
 }

@@ -45,13 +45,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 1931298151966786, guid: ac60dae672018b54ebb3ba79e33231ca, type: 3}
-  - {fileID: 1931298151966786, guid: 72317cd75d86bb34ab0574fc196e625b, type: 3}
-  - {fileID: 1931298151966786, guid: fb3df75a33e0530468740ecffd0a2d71, type: 3}
-  - {fileID: 1931298151966786, guid: 4f894e293da788a43a511e520428e9ab, type: 3}
-  - {fileID: 1931298151966786, guid: c888f5776a399454e915895def74eed8, type: 3}
-  - {fileID: 1931298151966786, guid: bc158a48e17a92c49b9659d4e419b9f8, type: 3}
-  - {fileID: 1931298151966786, guid: 1559f8bc286398c4c8e3f9d7d7925114, type: 3}
-  - {fileID: 1931298151966786, guid: 3b42cde61b1032a41b22dfe8cd7503e8, type: 3}
   - {fileID: 1931298151966786, guid: ec2c4fbe2f67f5844b8acc1035bba713, type: 3}
+  - {fileID: 1524411113276028, guid: 99b5a50ab3dffeb4ab0d0a756cc6333e, type: 3}
+  - {fileID: 1931298151966786, guid: 3b42cde61b1032a41b22dfe8cd7503e8, type: 3}
+  - {fileID: 1524411113276028, guid: 735ee5bde2dcfcd499ae4de777ed0697, type: 3}
+  - {fileID: 1931298151966786, guid: bc158a48e17a92c49b9659d4e419b9f8, type: 3}
+  - {fileID: 1524411113276028, guid: 9dc92896ec109a44d8757e62998ce345, type: 3}
+  - {fileID: 1931298151966786, guid: fb3df75a33e0530468740ecffd0a2d71, type: 3}
+  - {fileID: 1524411113276028, guid: cacf9838f7daad14d94721432a55cf28, type: 3}
+  - {fileID: 1931298151966786, guid: 4f894e293da788a43a511e520428e9ab, type: 3}
+  - {fileID: 1524411113276028, guid: 4a81d915c506dc240adf2da86e1a8644, type: 3}
+  - {fileID: 1931298151966786, guid: ac60dae672018b54ebb3ba79e33231ca, type: 3}
+  - {fileID: 1524411113276028, guid: 8dad3a7301c73e74cba20cace59e5795, type: 3}
+  - {fileID: 1931298151966786, guid: c888f5776a399454e915895def74eed8, type: 3}
+  - {fileID: 1524411113276028, guid: 54dc1db5579f81e4ab47fbe8909eaddc, type: 3}
+  - {fileID: 1931298151966786, guid: 1559f8bc286398c4c8e3f9d7d7925114, type: 3}
+  - {fileID: 1524411113276028, guid: 6f3c4d00117728b4a9fb9f0a7984ac21, type: 3}
   - {fileID: 1931298151966786, guid: 660f602cbe809d543ace81831391c867, type: 3}
+  - {fileID: 1524411113276028, guid: 6df4a69fe3f88f64686d0a3cc9be0c36, type: 3}
+  - {fileID: 1931298151966786, guid: 72317cd75d86bb34ab0574fc196e625b, type: 3}
+  - {fileID: 1524411113276028, guid: 56e2271e6b2c1814a8c6df49565477d5, type: 3}
+  timer: 16

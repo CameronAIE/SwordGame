@@ -15,10 +15,12 @@ public class Damage : MonoBehaviour
     public int score;
     [SerializeField]
     private GameObject particles;
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         sm = GameObject.FindObjectOfType<SphereManager>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -63,5 +65,9 @@ public class Damage : MonoBehaviour
         }
         Instantiate(particles, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+    public void PushBack(float force)
+    {
+        rb.AddForce((transform.forward * -1) * force, ForceMode.Impulse);
     }
 }

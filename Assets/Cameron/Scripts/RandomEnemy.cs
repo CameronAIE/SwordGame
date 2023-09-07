@@ -28,13 +28,14 @@ public class RandomEnemy : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-
+        //reset the directions of the enemy
         if (timer <= 0)
         {
             RandomDirections();
             timer = Random.Range(timerMin, timerMax);
         }
         
+        //move acording to directions this is also based off of the swirl movement
         if (right)
         {
             transform.position += transform.right * speed * Time.deltaTime;
@@ -58,6 +59,7 @@ public class RandomEnemy : MonoBehaviour
 
     void RandomDirections()
     {
+        // i tried to give each direction an even chance to happen
         right = false;
         left = false;
         backward = false;

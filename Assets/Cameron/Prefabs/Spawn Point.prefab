@@ -65,4 +65,4 @@ MonoBehaviour:
   - {fileID: 1524411113276028, guid: 6df4a69fe3f88f64686d0a3cc9be0c36, type: 3}
   - {fileID: 1931298151966786, guid: 72317cd75d86bb34ab0574fc196e625b, type: 3}
   - {fileID: 1524411113276028, guid: 56e2271e6b2c1814a8c6df49565477d5, type: 3}
-  timer: 16
+  timer: 30

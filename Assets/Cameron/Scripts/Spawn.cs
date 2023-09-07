@@ -18,6 +18,7 @@ public class Spawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //adding harder enemys over time
         realTimer += Time.deltaTime;
         if (realTimer >= timer)
         {
@@ -39,6 +40,7 @@ public class Spawn : MonoBehaviour
 
     public GameObject SpawnSpecificEnenmy(int enemy)
     {
+        // spawn specific enemy from array place and make sure the number is useable
         int realEnemy = enemy % enemies.Length;
         return Instantiate(enemies[realEnemy], transform.position, transform.rotation);
     }

@@ -43,6 +43,7 @@ public class Damage : MonoBehaviour
         }
     }
 
+    //this is just for taking damage from the lasers
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Laser")
@@ -53,6 +54,7 @@ public class Damage : MonoBehaviour
         }
     }
 
+    //destroys it self and if true adds score
     public void Die(bool addScore)
     {
         if (addScore)

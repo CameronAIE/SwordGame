@@ -4,15 +4,5 @@ using UnityEngine;
 
 public class Identifier : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    ////theres no no code
 }

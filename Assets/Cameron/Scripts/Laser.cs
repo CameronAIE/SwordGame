@@ -18,6 +18,7 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //the laser just moves forward and dies
         transform.position += transform.up * speed * Time.deltaTime;
         lifeTime -= Time.deltaTime;
         

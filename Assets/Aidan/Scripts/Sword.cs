@@ -128,6 +128,7 @@ public class Sword : MonoBehaviour
             //Deals damage to base if death enemy is hit
 
             SphereManager.ObjDamage(2);
+            collision.transform.GetComponent<Damage>().Die(false);
             Debug.Log("base has taken damage!");
         }
     }

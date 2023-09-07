@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private SphereManager SphereManager;
     private bool DebugMode;
+    private float spawnTimer; //countdown value for spawning
+    [SerializeField] private float difficulty; //maximum wait time between enemies
+    [SerializeField] private Spawn[] spawnLocations; //locations of all of the spawn points
 
     public enum GameState
     {
@@ -42,6 +45,16 @@ public class GameManager : MonoBehaviour
 
                 break;
         }
+
+        if(spawnTimer > difficulty)
+        {
+            spawnTimer = 0;
+            spawnLocations[Random.Range(0, spawnLocations.Length)].SpawnEnemy();
+            difficulty -= 0.01f;
+        }
+
+        spawnTimer += Time.deltaTime;
+
     }
 
     public void PauseGame()

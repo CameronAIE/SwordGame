@@ -63,13 +63,13 @@ public class GameManager : MonoBehaviour
                 {
                     gameState = GameState.Killed;
                 }
-                if (Input.GetKeyDown(KeyCode.V) || Input.GetKeyDown(KeyCode.Escape))
+                if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
                 {
                     PauseGame();
                 }
                 break;
             case GameState.Paused:
-                if (Input.GetKeyDown(KeyCode.V) || Input.GetKeyDown(KeyCode.Escape))
+                if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
                 {
                     PauseGame();
                 }

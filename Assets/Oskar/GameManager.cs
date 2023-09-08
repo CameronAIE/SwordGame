@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         DebugMode = false;
+        PauseMenu.SetActive(false);
         gameState = GameState.Active;
     }
 
@@ -61,13 +63,13 @@ public class GameManager : MonoBehaviour
                 {
                     gameState = GameState.Killed;
                 }
-                if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+                if (Input.GetKeyDown(KeyCode.V) || Input.GetKeyDown(KeyCode.Escape))
                 {
                     PauseGame();
                 }
                 break;
             case GameState.Paused:
-                if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+                if (Input.GetKeyDown(KeyCode.V) || Input.GetKeyDown(KeyCode.Escape))
                 {
                     PauseGame();
                 }
@@ -76,9 +78,12 @@ public class GameManager : MonoBehaviour
 
                 break;
         }
+    }
 
-        
-
+    public void QuitToMenu()
+    {
+        SphereManager.SaveScore();
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void PauseGame()
@@ -88,10 +93,12 @@ public class GameManager : MonoBehaviour
             case GameState.Paused:
                 Time.timeScale = 1;
                 gameState = GameState.Active;
+                PauseMenu.SetActive(false);
                 break;
             case GameState.Active:
                 Time.timeScale = 0;
                 gameState = GameState.Paused;
+                PauseMenu.SetActive(true);
                 break;
             default: break;
         }

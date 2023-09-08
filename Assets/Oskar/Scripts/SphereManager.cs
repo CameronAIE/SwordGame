@@ -36,10 +36,7 @@ public class SphereManager : MonoBehaviour
     public void AddScore(int score)
     {
         Score += score;
-        if (Score > PlayerPrefs.GetInt("highscore"))
-        {
-            PlayerPrefs.SetInt("highscore", Score);
-        }
+        SaveScore();
         scoreText.text = $"Highscore:\n{Highscore}\nScore:\n{Score}";
     }
 
@@ -64,9 +61,13 @@ public class SphereManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (Score > Highscore)
+        SaveScore();
+    }
+    public void SaveScore()
+    {
+        if(Score > Highscore)
         {
-            PlayerPrefs.SetInt("highscore", Score);
+            PlayerPrefs.SetInt("Highscore", Score);
         }
     }
 }

@@ -67,7 +67,8 @@ public class SphereManager : MonoBehaviour
     {
         if(Score > Highscore)
         {
-            PlayerPrefs.SetInt("Highscore", Score);
+            PlayerPrefs.SetInt("highscore", Score);
+            Highscore = PlayerPrefs.GetInt("highscore");
         }
     }
 }

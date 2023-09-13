@@ -21,6 +21,7 @@ public class Damage : MonoBehaviour
     void Start()
     {
         sm = GameObject.FindObjectOfType<SphereManager>();
+        gm = GameObject.FindObjectOfType<GameManager>();
         rb = GetComponent<Rigidbody>();
     }
 

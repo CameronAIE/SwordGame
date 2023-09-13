@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
 using Unity.VisualScripting;
+using UnityEditor.Build;
 using UnityEngine;
 
 public class Sword : MonoBehaviour
@@ -15,6 +16,7 @@ public class Sword : MonoBehaviour
                             //2 = autospin
     [SerializeField] private float smoothVal = 6f; //greater = faster smoothing
     [SerializeField] private float defaultSize = 1f; //The size the sword will rest to if no size modification is active
+    [SerializeField] private bool debugMode; //enables debug inputs 
     [Header("Prefabs")]
     [SerializeField] GameObject laser;
     [Header("Assigned objects")]
@@ -99,29 +101,33 @@ public class Sword : MonoBehaviour
         //Time.timeScale = Mathf.Lerp(Time.timeScale, 1, Time.deltaTime * 5f);
 
         //Debug inputs for testing
-         if (Input.GetMouseButton(0))
-         {
-             GrowSword(3f, 5f);
-         }
-         if (Input.GetMouseButton(1))
-         {
-             GrowSword(0.5f, 5f);
-         }
-         if (Input.GetKeyDown(KeyCode.Alpha1))
-         {
-             if (!powerups[0]) EnablePowerUp(0);
-             else DisablePowerUp(0);
-         }
-         if (Input.GetKeyDown(KeyCode.Alpha2))
-         {
-             if (!powerups[1]) EnablePowerUp(1);
-             else DisablePowerUp(1);
-         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (debugMode)
         {
-            if (!powerups[2]) EnablePowerUp(2);
-            else DisablePowerUp(2);
+            if (Input.GetMouseButton(0))
+            {
+                GrowSword(3f, 5f);
+            }
+            if (Input.GetMouseButton(1))
+            {
+                GrowSword(0.5f, 5f);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                if (!powerups[0]) EnablePowerUp(0);
+                else DisablePowerUp(0);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                if (!powerups[1]) EnablePowerUp(1);
+                else DisablePowerUp(1);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                if (!powerups[2]) EnablePowerUp(2);
+                else DisablePowerUp(2);
+            }
         }
+        
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Spawn[] spawnLocations; //locations of all of the spawn points
     [SerializeField] private int maxEnemies = 15; //maximum allowed enemies currently active in scene
     [SerializeField] List<GameObject> enemiesList; //list of all active enemies
+    [Header("PowerUps")]
+    //[SerializeField] private
     [SerializeField] private int chance; // chance of a power up 0 is one in one 100 is one in 101
     [SerializeField] private int powerUpDamage;
     [SerializeField] private float pushBack;
@@ -66,10 +68,6 @@ public class GameManager : MonoBehaviour
                     if (!enemy)
                     {
                         enemiesList.Remove(enemy);
-                        if(Random.Range(0, chance) == 0)
-                        {
-                            PowerUp();
-                        }
                         break;
                     }
                 }
@@ -129,43 +127,50 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    private void PowerUp()
+    public void PowerUp()
     {
-        int result = Random.Range(1, 9);
-
-        switch (result)
+        if (Random.Range(0, chance) == 0)
         {
-            case 1:
-                
-                player.EnablePowerUp(1);
-                break;
-            case 2:
-                player.EnablePowerUp(0); ;
-                break;
-            case 3:
-                foreach (GameObject enemy in enemiesList)
-                {
-                    enemy.GetComponent<Damage>().Die(true);
-                }
-                break;
-            case 4:
-                sphereManager.ObjDamage(powerUpDamage);
-                break;
-            case 5:
-                foreach (GameObject enemy in enemiesList)
-                {
-                    enemy.GetComponent<Damage>().PushBack(pushBack);
-                }
-                break;
-            case 6:
-                player.GrowSword(swordSize, bigSwordTime);
-                break;
-            case 7:
-                sphereManager.ObjDamage(powerUpHeal);
-                break;
-            case 8:
-                cameraZoom.Zoom(zoom, zoomTime);
-                break;
+            int result = Random.Range(1, 10);
+
+            switch (result)
+            {
+                case 1:
+
+                    player.EnablePowerUp(1);
+                    break;
+                case 2:
+                    player.EnablePowerUp(0); ;
+                    break;
+                case 3:
+                    foreach (GameObject enemy in enemiesList)
+                    {
+                        enemy.GetComponent<Damage>().Die(true);
+                    }
+                    break;
+                case 4:
+                    sphereManager.ObjDamage(powerUpDamage);
+                    break;
+                case 5:
+                    foreach (GameObject enemy in enemiesList)
+                    {
+                        enemy.GetComponent<Damage>().PushBack(pushBack);
+                    }
+                    break;
+                case 6:
+                    player.GrowSword(swordSize, bigSwordTime);
+                    break;
+                case 7:
+                    sphereManager.ObjDamage(powerUpHeal);
+                    break;
+                case 8:
+                    cameraZoom.Zoom(zoom, zoomTime);
+                    break;
+                case 9:
+                    player.EnablePowerUp(3);
+                    break;
+            }
         }
+        
     }
 }

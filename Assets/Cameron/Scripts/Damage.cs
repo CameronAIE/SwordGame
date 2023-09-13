@@ -12,6 +12,7 @@ public class Damage : MonoBehaviour
     private float iTime;
     private float realITime;
     private SphereManager sm;
+    private GameManager gm;
     public int score;
     [SerializeField]
     private GameObject particles;
@@ -62,6 +63,7 @@ public class Damage : MonoBehaviour
         if (addScore)
         {
             sm.AddScore(score);
+            gm.PowerUp();
         }
         Instantiate(particles, transform.position, Quaternion.identity);
         Destroy(gameObject);

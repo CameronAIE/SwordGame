@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float bigSwordTime;
     [SerializeField] private int powerUpHeal;
     [SerializeField] private CameraZoom cameraZoom;
+    [SerializeField] private float zoom;
+    [SerializeField] private float zoomTime;
      
 
     public enum GameState
@@ -162,7 +164,7 @@ public class GameManager : MonoBehaviour
                 sphereManager.ObjDamage(powerUpHeal);
                 break;
             case 8:
-                cameraZoom.Zoom();
+                cameraZoom.Zoom(zoom, zoomTime);
                 break;
         }
     }

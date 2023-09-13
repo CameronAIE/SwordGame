@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 126702097}
   - component: {fileID: 126702096}
   - component: {fileID: 126702099}
+  - component: {fileID: 126702100}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -330,6 +331,19 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &126702100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126702095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f48027fe8840d48bc04c1ce39e59d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSize: 5
 --- !u!1001 &136327132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2121,15 +2135,59 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: zoom
+      value: 14.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: chance
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1120258032}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: pushBack
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: zoomTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 768923518}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: swordSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: cameraZoom
+      value: 
+      objectReference: {fileID: 126702100}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: difficulty
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: powerUpHeal
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: bigSwordTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: SphereManager
+      value: 
+      objectReference: {fileID: 772785427}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: powerUpDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: sphereManager
       value: 
       objectReference: {fileID: 772785427}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
@@ -2230,6 +2288,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+--- !u!114 &1120258032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+  m_PrefabInstance: {fileID: 371742708}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb5cf1a6dd45db4ca655ab296464ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1122383764
 PrefabInstance:
   m_ObjectHideFlags: 0

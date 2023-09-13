@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main Scene and Other shared/Game.unity
     guid: 9a8ba210391422e4288215aee3063e4e
+  - enabled: 1
+    path: Assets/Main Scene and Other shared/MainMenu.unity
+    guid: 27e2bb55ee6323847ba410dc48e0854b
   m_configObjects: {}

@@ -865,6 +865,10 @@ PrefabInstance:
       propertyPath: SphereManager
       value: 
       objectReference: {fileID: 772785427}
+    - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: powerups.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3835509082128279516, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2140,7 +2144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: chance
-      value: 12
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: player
@@ -2193,6 +2197,10 @@ PrefabInstance:
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: enemiesList.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
+      propertyPath: powerUpTimers.Array.size
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: spawnLocations.Array.size

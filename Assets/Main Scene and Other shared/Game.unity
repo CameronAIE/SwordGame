@@ -862,6 +862,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: debugMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: SphereManager
       value: 
       objectReference: {fileID: 772785427}
@@ -912,6 +916,10 @@ PrefabInstance:
     - target: {fileID: 3835509082128279516, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835509082128279517, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: m_Motor.force
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 3835509082128279518, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: m_CollisionDetection
@@ -2144,7 +2152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: chance
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: player
@@ -2867,8 +2875,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.85114646}
   m_AnchorMax: {x: 0.254, y: 1}
-  m_AnchoredPosition: {x: -18, y: 0.5}
-  m_SizeDelta: {x: -80, y: -27}
+  m_AnchoredPosition: {x: 17.852371, y: -61.947235}
+  m_SizeDelta: {x: -8.2953, y: 97.8945}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1366083236
 MonoBehaviour:
@@ -2917,12 +2925,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 67.1
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 12
+  m_fontSizeMax: 80
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -2953,7 +2961,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 14.337524}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

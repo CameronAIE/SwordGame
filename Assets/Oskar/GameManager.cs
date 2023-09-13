@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
                     break;
                 case 3:
                     //auto swing
-                    player.EnablePowerUp(3);
+                    player.EnablePowerUp(2);
                     powerUpTimers[2] = 20;
                     break;
                 case 4:

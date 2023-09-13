@@ -144,7 +144,7 @@ public class Sword : MonoBehaviour
 
             SphereManager.ObjDamage(2);
             collision.transform.GetComponent<Damage>().Die(false);
-            Debug.Log("base has taken damage!");
+            //Debug.Log("base has taken damage!");
         }
     }
 

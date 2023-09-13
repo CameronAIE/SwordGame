@@ -69,6 +69,13 @@ public class Damage : MonoBehaviour
         Instantiate(particles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
+
+    public void PowerUpDie()
+    {
+        sm.AddScore(score);
+        Instantiate(particles, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
     public void PushBack(float force)
     {
         rb.AddForce((transform.forward * -1) * force, ForceMode.Impulse);

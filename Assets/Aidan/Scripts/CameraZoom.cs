@@ -19,7 +19,7 @@ public class CameraZoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if sizetimer (set by GrowSword function) is greater than 0, increase the size of the sword via linear interpolation
+        //if sizetimer (set by zoom function) is greater than 0, increase the size of the zoom via linear interpolation
         if (sizeTimer > 0)
         {
             sizeTimer -= Time.deltaTime; //count down the timer

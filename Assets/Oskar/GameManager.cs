@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxEnemies = 15; //maximum allowed enemies currently active in scene
     [SerializeField] List<GameObject> enemiesList; //list of all active enemies
     [Header("PowerUps")]
-    //[SerializeField] private
+    [SerializeField] private float[] powerUpTimers;
     [SerializeField] private int chance; // chance of a power up 0 is one in one 100 is one in 101
     [SerializeField] private int powerUpDamage;
     [SerializeField] private float pushBack;
@@ -71,6 +71,23 @@ public class GameManager : MonoBehaviour
                         break;
                     }
                 }
+                //subtracts time from the current powerups and disables them if they have expired
+                for(int i = 0; i < powerUpTimers.Length; i++)
+                {
+                    if (powerUpTimers[i] > 0)
+                    {
+                        powerUpTimers[i] -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        if (i < 3)
+                        {
+                            player.DisablePowerUp(i);
+                        }
+                    }
+                    
+                }
+
                 if (sphereManager.IsDead())
                 {
                     gameState = GameState.Killed;
@@ -136,38 +153,43 @@ public class GameManager : MonoBehaviour
             switch (result)
             {
                 case 1:
-
-                    player.EnablePowerUp(1);
+                    //laser
+                    player.EnablePowerUp(0);
+                    powerUpTimers[0] = 20;
                     break;
                 case 2:
-                    player.EnablePowerUp(0); ;
+                    //light sword
+                    player.EnablePowerUp(1);
+                    powerUpTimers[1] = 20;
                     break;
                 case 3:
-                    foreach (GameObject enemy in enemiesList)
-                    {
-                        enemy.GetComponent<Damage>().Die(true);
-                    }
+                    //auto swing
+                    player.EnablePowerUp(3);
+                    powerUpTimers[2] = 20;
                     break;
                 case 4:
-                    sphereManager.ObjDamage(powerUpDamage);
+                    player.GrowSword(swordSize, bigSwordTime);
                     break;
                 case 5:
-                    foreach (GameObject enemy in enemiesList)
-                    {
-                        enemy.GetComponent<Damage>().PushBack(pushBack);
-                    }
+                    cameraZoom.Zoom(zoom, zoomTime);
                     break;
                 case 6:
-                    player.GrowSword(swordSize, bigSwordTime);
+                    sphereManager.ObjDamage(powerUpDamage);
                     break;
                 case 7:
                     sphereManager.ObjDamage(powerUpHeal);
                     break;
                 case 8:
-                    cameraZoom.Zoom(zoom, zoomTime);
+                    foreach (GameObject enemy in enemiesList)
+                    {
+                        enemy.GetComponent<Damage>().PushBack(pushBack);
+                    }
                     break;
                 case 9:
-                    player.EnablePowerUp(3);
+                    foreach (GameObject enemy in enemiesList)
+                    {
+                        enemy.GetComponent<Damage>().PowerUpDie();
+                    }
                     break;
             }
         }

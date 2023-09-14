@@ -797,7 +797,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.95
+  m_fontSize: 29.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -867,7 +867,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: debugMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: SphereManager
@@ -3208,7 +3208,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 88.45
+  m_fontSize: 53.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

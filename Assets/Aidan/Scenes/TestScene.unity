@@ -1210,7 +1210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3835509082128279517, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: m_Motor.force
-      value: 1000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 3835509082128279517, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: m_Motor.targetVelocity

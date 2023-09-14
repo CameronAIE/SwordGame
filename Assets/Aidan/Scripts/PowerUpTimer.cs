@@ -19,14 +19,16 @@ public class PowerUpTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //counts down untill value is 0 in which it deletes itself
         countDown.value -= Time.deltaTime;
         if (countDown.value <= 0) Destroy(gameObject);
     }
 
     public void Initialize(string powerUpName, float time)
     {
+        //sets text for object
         powerText.text = powerUpName;
-
+        //sets maxValue and value to starting time
         countDown.maxValue = time;
         countDown.value = time;
     }

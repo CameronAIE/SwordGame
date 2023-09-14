@@ -76,6 +76,8 @@ public class Damage : MonoBehaviour
         Instantiate(particles, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
+
+    //pushes the enemy backwards
     public void PushBack(float force)
     {
         rb.AddForce((transform.forward * -1) * force, ForceMode.Impulse);

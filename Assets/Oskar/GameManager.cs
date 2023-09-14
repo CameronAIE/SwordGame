@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject DebugMenu, PauseMenu, DeathMenu;
-    [SerializeField]
-    private SphereManager sphereManager;
+    [SerializeField] private GameObject DebugMenu, PauseMenu, DeathMenu;
+    [SerializeField] private SphereManager sphereManager;
+    [SerializeField] private TextMeshProUGUI endScore;
     private bool DebugMode;
     [SerializeField] private Sword player;
     private float spawnTimer; //countdown value for spawning
@@ -141,7 +141,10 @@ public class GameManager : MonoBehaviour
 
     private void Dying()
     {
+        player.gameObject.SetActive(false);
+        sphereManager.SaveScore();
         DeathMenu.SetActive(true);
+        endScore.text = $"Score: {sphereManager.getScore()} | Highscore: {sphereManager.getHighScore()}";
         if (Input.anyKeyDown)
         {
             SceneManager.LoadScene("MainMenu");

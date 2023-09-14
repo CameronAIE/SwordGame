@@ -18,7 +18,12 @@ public class SphereManager : MonoBehaviour
         Highscore = PlayerPrefs.GetInt("highscore");
         scoreText.text = $"Highscore:\n{Highscore}\nScore:\n{Score}";
     }
-
+    public int getScore()
+    { return Score; }
+    public int getHighScore()
+    {
+        return Highscore;
+    }
     /// <summary>
     /// decreases health by dmg
     /// </summary>

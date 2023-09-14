@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject DebugMenu, PauseMenu;
+    private GameObject DebugMenu, PauseMenu, DeathMenu;
     [SerializeField]
     private SphereManager sphereManager;
     private bool DebugMode;
@@ -141,7 +141,11 @@ public class GameManager : MonoBehaviour
 
     private void Dying()
     {
-        SceneManager.LoadScene("MainMenu");
+        DeathMenu.SetActive(true);
+        if (Input.anyKeyDown)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     public void PowerUp()

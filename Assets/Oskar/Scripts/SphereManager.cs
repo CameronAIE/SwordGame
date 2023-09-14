@@ -6,13 +6,13 @@ using UnityEngine;
 public class SphereManager : MonoBehaviour
 {
     [SerializeField]
-    private int Score, Health, Highscore;
+    private int Score, Health, Highscore, maxHealth;
     [SerializeField]
     private TextMeshProUGUI healthText, scoreText;
     // Start is called before the first frame update
     void Start()
     {
-        Health = 100;
+        Health = maxHealth;
         Score = 0;
         healthText.text = $"Health\n{Health} | 100";
         Highscore = PlayerPrefs.GetInt("highscore");

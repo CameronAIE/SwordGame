@@ -31,6 +31,10 @@ public class SphereManager : MonoBehaviour
     public void ObjDamage(int dmg)
     {
         Health -= dmg;
+        if (Health < 0)
+        {
+            Health = 0;
+        }
         healthText.text = $"Health\n{Health} | 100";
     }
 

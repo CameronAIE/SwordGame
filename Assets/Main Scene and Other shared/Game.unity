@@ -797,7 +797,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.9
+  m_fontSize: 46.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2543,7 +2543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: powerUpHeal
-      value: 10
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4951257873676625180, guid: b4d56496940ca2548adb7a42c062066f, type: 3}
       propertyPath: powerUpList
@@ -3290,7 +3290,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.05
+  m_fontSize: 75.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

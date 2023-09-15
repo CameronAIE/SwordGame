@@ -17,6 +17,7 @@ public class MainMenuManager : MonoBehaviour
     {
         highScore = PlayerPrefs.GetInt("highscore");
         highScoreText.GetComponent<TextMeshProUGUI>().text = $"Highscore: \n {highScore}";
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void PlayGame() // goes into main scene

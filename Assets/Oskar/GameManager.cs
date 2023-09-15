@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         DebugMode = false;
         PauseMenu.SetActive(false);
         gameState = GameState.Active;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Update is called once per frame
@@ -125,6 +126,7 @@ public class GameManager : MonoBehaviour
             case GameState.Paused:
                 Time.timeScale = 1;
                 gameState = GameState.Active;
+                Cursor.lockState = CursorLockMode.Confined;
                 PauseMenu.SetActive(false);
                 break;
             case GameState.Active:

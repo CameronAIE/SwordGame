@@ -797,7 +797,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.3
+  m_fontSize: 19.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -865,6 +865,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2923916496073960661, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: debugMode
       value: 0
@@ -1070,6 +1074,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402667419}
   m_CullTransparentMesh: 1
+--- !u!1 &434689133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8582175414839682832, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+  m_PrefabInstance: {fileID: 371742708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &461178742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,12 +2681,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
   m_PrefabInstance: {fileID: 371742708}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 434689133}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cb5cf1a6dd45db4ca655ab296464ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1120258040
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434689133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5156528, y: 0.55788356, z: 0.29640865}
+  m_Center: {x: -0.89642805, y: 0.033379257, z: -0.011919677}
 --- !u!1001 &1122383764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3290,7 +3312,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75.7
+  m_fontSize: 29.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

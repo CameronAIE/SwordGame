@@ -149,6 +149,10 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(false);
         sphereManager.SaveScore();
         DeathMenu.SetActive(true);
+        foreach(GameObject enemy in enemiesList)
+        {
+            enemy.SetActive(false);
+        }
         endScore.text = $"Score: {sphereManager.getScore()} | Highscore: {sphereManager.getHighScore()}";
         if (Input.anyKeyDown)
         {

@@ -58,7 +58,7 @@ public class Sword : MonoBehaviour
         //updates the current position of the sword and smooths it with linear interpolation
         hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, swordPos, Time.deltaTime * smoothVal);
     #endif
-    #if UNITY_STANDALONE || Unity_WEBGL
+    #if UNITY_STANDALONE || UNITY_WEBGL
         hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, cursorObject.transform.position, Time.deltaTime * smoothVal);
     #endif
     }
@@ -66,7 +66,7 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    #if UNITY_STANDALONE || Unity_WEBGL
+    #if UNITY_STANDALONE || UNITY_WEBGL
         Vector2 input = new((Input.GetAxisRaw("Mouse X") / dampner) * Time.timeScale, (Input.GetAxisRaw("Mouse Y") / dampner) * Time.timeScale);
 
         cursorObject.transform.position = new(Mathf.Clamp(cursorObject.transform.position.x + input.x, -9, 9), Mathf.Clamp(cursorObject.transform.position.y + input.y, -5, 5), -0.5f);

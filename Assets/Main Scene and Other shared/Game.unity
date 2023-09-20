@@ -894,6 +894,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: dampner
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: debugMode
       value: 0
       objectReference: {fileID: 0}

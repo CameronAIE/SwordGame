@@ -797,7 +797,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.3
+  m_fontSize: 19.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -897,6 +897,14 @@ PrefabInstance:
       propertyPath: debugMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: inputType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
+      propertyPath: cursorPrefab
+      value: 
+      objectReference: {fileID: 6447896922943635015, guid: 0cdaa513a6ac84a49aef354a1444a3e6, type: 3}
     - target: {fileID: 3835509081784768379, guid: 30ad19c9352de82429666d6204a5d4a1, type: 3}
       propertyPath: SphereManager
       value: 
@@ -3356,7 +3364,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75.7
+  m_fontSize: 28.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

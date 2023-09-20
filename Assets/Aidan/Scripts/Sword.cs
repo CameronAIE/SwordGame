@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Sword : MonoBehaviour
@@ -10,6 +11,7 @@ public class Sword : MonoBehaviour
     private Rigidbody rb;
     private Transform pivot;
     [Header("Values")]
+    public bool inputType; //true = virtual cursor enabled 
     public bool[] powerups; //0 = laser
                             //1 = lighter sword
                             //2 = autospin
@@ -18,6 +20,7 @@ public class Sword : MonoBehaviour
     [SerializeField] private bool debugMode; //enables debug inputs 
     [Header("Prefabs")]
     [SerializeField] GameObject laser;
+    [SerializeField] private GameObject cursorPrefab;
     [Header("Assigned objects")]
     [SerializeField] private SphereManager SphereManager; //prehaps I could compress this?
     [SerializeField] ParticleSystem sparks;
@@ -30,6 +33,8 @@ public class Sword : MonoBehaviour
     private float sizeTimer = 0;
     private float sizeVal = 0;
 
+    private GameObject cursorObject;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,26 +43,44 @@ public class Sword : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         hj = transform.GetComponentInParent<HingeJoint>();
         pivot = transform.parent;
+        if (inputType)
+        {
+            cursorObject = Instantiate(cursorPrefab);
+        }
     }
 
     private void FixedUpdate()
     {
-        //the position the sword is required to go
-        Vector3 swordPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
-  Input.mousePosition.y, Camera.main.nearClipPlane + 9));
-        //updates the current position of the sword and smooths it with linear interpolation
-        hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, swordPos, Time.deltaTime * smoothVal);
+        //if the regular input type is used
+        if(!inputType)
+        {
+            //the position the sword is required to go
+            Vector3 swordPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
+      Input.mousePosition.y, Camera.main.nearClipPlane + 9));
+            //updates the current position of the sword and smooths it with linear interpolation
+            hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, swordPos, Time.deltaTime * smoothVal);
+        }
+        else //virtual cursor method
+        {
+            hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, cursorObject.transform.position, Time.deltaTime * smoothVal);
+        }
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        if (inputType)
+        {
+            Vector2 input = new(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+
+            cursorObject.transform.position = new(Mathf.Clamp(cursorObject.transform.position.x + input.x, -9, 9), Mathf.Clamp(cursorObject.transform.position.y + input.y, -5, 5), -0.5f);
+        }
         
-        
-        
+
+
         //if sizetimer (set by GrowSword function) is greater than 0, increase the size of the sword via linear interpolation
-        if(sizeTimer > 0)
+        if (sizeTimer > 0)
         {
             sizeTimer -= Time.deltaTime; //count down the timer
             float lerp = Mathf.Lerp(pivot.localScale.x, sizeVal, Time.deltaTime * 2f);

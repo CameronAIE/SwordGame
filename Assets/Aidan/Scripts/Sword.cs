@@ -70,9 +70,9 @@ public class Sword : MonoBehaviour
     #if UNITY_STANDALONE || UNITY_WEBGL
         Vector2 input = new((Input.GetAxisRaw("Mouse X") / dampner) * Time.timeScale, (Input.GetAxisRaw("Mouse Y") / dampner) * Time.timeScale);
 
-        cursorObject.transform.position = new(Mathf.Clamp(cursorObject.transform.position.x + input.x, -9 * (camera.orthographicSize / 5), 9 * (camera.orthographicSize / 5)),
-            Mathf.Clamp(cursorObject.transform.position.y + input.y, -5 * (camera.orthographicSize / 5), 5 * (camera.orthographicSize / 5)), -0.5f);
-    #endif
+        cursorObject.transform.position = new(Mathf.Clamp(cursorObject.transform.position.x + input.x, -9f * (camera.orthographicSize / 5f), 9f * (camera.orthographicSize / 5f)),
+            Mathf.Clamp(cursorObject.transform.position.y + input.y, -5f * (camera.orthographicSize / 5f), 5f * (camera.orthographicSize / 5f)), -0.5f);
+#endif
 
 
 

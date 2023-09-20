@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  health: 2000
+  health: 1500
   iTime: 3
   score: 60
   particles: {fileID: 1337198075554910, guid: fb1dcd5325950964c8806dfd9f59c2f4, type: 3}

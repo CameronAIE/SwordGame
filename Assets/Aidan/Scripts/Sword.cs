@@ -28,6 +28,7 @@ public class Sword : MonoBehaviour
     [SerializeField] ParticleSystem lightEffect;
     [SerializeField] GameObject slashEffect;
     [SerializeField] private float dampner;
+    [SerializeField] Camera camera;
 
     private float laserShoot = 0;
 
@@ -69,7 +70,8 @@ public class Sword : MonoBehaviour
     #if UNITY_STANDALONE || UNITY_WEBGL
         Vector2 input = new((Input.GetAxisRaw("Mouse X") / dampner) * Time.timeScale, (Input.GetAxisRaw("Mouse Y") / dampner) * Time.timeScale);
 
-        cursorObject.transform.position = new(Mathf.Clamp(cursorObject.transform.position.x + input.x, -9, 9), Mathf.Clamp(cursorObject.transform.position.y + input.y, -5, 5), -0.5f);
+        cursorObject.transform.position = new(Mathf.Clamp(cursorObject.transform.position.x + input.x, -9 * (camera.orthographicSize / 5), 9 * (camera.orthographicSize / 5)),
+            Mathf.Clamp(cursorObject.transform.position.y + input.y, -5 * (camera.orthographicSize / 5), 5 * (camera.orthographicSize / 5)), -0.5f);
     #endif
 
 

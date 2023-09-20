@@ -10,12 +10,9 @@ public class TrickEnemy : MonoBehaviour
     private float timer;
     public GameObject[] enemies;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
+    /// <summary>
+    /// looks at the center then moves forward and when the timer is up replaces it self with another enemy
+    /// </summary>
     void Update()
     {
         // makes the enemy look at the centre of the world and has them be the right way up its in upfate incase the sword moves it

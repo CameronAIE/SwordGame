@@ -8,13 +8,9 @@ public class SwirlLeftEnemy : MonoBehaviour
     public float sideSpeed;
     public float forwardSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    /// <summary>
+    /// same as the base enemy it looks at the center and moves forward but it also moves sideways based off of a second speed
+    /// </summary>
     void Update()
     {
         //moves the enemy towards the centre

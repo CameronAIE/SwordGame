@@ -9,13 +9,10 @@ public class Spawn : MonoBehaviour
     private float timer;
     private float realTimer;
     private int avalibileEnemys = 2;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
+    /// <summary>
+    /// uses a timer to add to the amount of useable enemys over time
+    /// </summary>
     void Update()
     {
         //adding harder enemys over time
@@ -31,6 +28,10 @@ public class Spawn : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// will spawn a random enemy at its position rfom the avalible enemys
+    /// </summary>
+    /// <returns></returns>
     public GameObject SpawnEnemy()
     {
         //spawn random enemy from array
@@ -38,6 +39,11 @@ public class Spawn : MonoBehaviour
         return Instantiate(enemies[choice], transform.position, transform.rotation);
     }
 
+    /// <summary>
+    /// will spawn a specific enemy based off of an int
+    /// </summary>
+    /// <param name="enemy"></param>
+    /// <returns></returns>
     public GameObject SpawnSpecificEnenmy(int enemy)
     {
         // spawn specific enemy from array place and make sure the number is useable

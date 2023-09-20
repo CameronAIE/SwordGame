@@ -13,16 +13,20 @@ public class TimedEnemy : MonoBehaviour
     private float realTimer;
     private GameObject redColour;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// finds the object to turnn off and on and sets the real timer
+    /// </summary>
     void Start()
     {
         //the actual game object doesnt have the materail to chaange the colour instead its one of its children so we just turn the red one off and on
-        Identifier audio = gameObject.GetComponentInChildren<Identifier>();
-        redColour = audio.gameObject;
+        Identifier identifier = gameObject.GetComponentInChildren<Identifier>();
+        redColour = identifier.gameObject;
         realTimer = timer;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// will look at the center then move forwards but also uses a timer to change states between hittable and unhittable
+    /// </summary>
     void Update()
     {
         // makes the enemy look at the centre of the world and has them be the right way up its in upfate incase the sword moves it

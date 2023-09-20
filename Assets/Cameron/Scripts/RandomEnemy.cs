@@ -16,15 +16,18 @@ public class RandomEnemy : MonoBehaviour
     private float timerMax;
     private float timer;
 
-
-    // Start is called before the first frame update
+    /// <summary>
+    /// sets the timer
+    /// </summary>
     void Start()
     {
         timer = Random.Range(timerMin, timerMax);
 
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// moves the enemy based off of the directions boolens and changes them if the timer reaches 0
+    /// </summary>
     void Update()
     {
         timer -= Time.deltaTime;
@@ -57,6 +60,10 @@ public class RandomEnemy : MonoBehaviour
         transform.LookAt(target, Vector3.back);
     }
 
+
+    /// <summary>
+    /// changes the direction of the enemy at random
+    /// </summary>
     void RandomDirections()
     {
         // i tried to give each direction an even chance to happen

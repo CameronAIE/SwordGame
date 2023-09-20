@@ -7,13 +7,9 @@ public class BaseEnemy : MonoBehaviour
     public Transform target;
     public float speed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    /// <summary>
+    /// the update function for this enemy will just have it look at the center and move forwards
+    /// </summary>
     void Update()
     {
         //moves the enemy towards the centre

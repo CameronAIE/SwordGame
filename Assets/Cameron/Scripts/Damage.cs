@@ -17,7 +17,10 @@ public class Damage : MonoBehaviour
     [SerializeField]
     private GameObject particles;
     private Rigidbody rb;
-    // Start is called before the first frame update
+    
+    /// <summary>
+    /// some components are found and set
+    /// </summary>
     void Start()
     {
         sm = GameObject.FindObjectOfType<SphereManager>();
@@ -25,7 +28,9 @@ public class Damage : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// decreases a timer and keeps the enemy o9n the ground
+    /// </summary>
     void Update()
     {
         realITime -= Time.deltaTime;
@@ -33,6 +38,9 @@ public class Damage : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
+    /// <summary>
+    /// this is called when when the enemy needs to take damage from the sword or the laser or other 
+    /// </summary>
     public void TakeDamage(float damage)
     {
         //the itime is so the sword can keep calling if they keep colliding 
@@ -47,7 +55,10 @@ public class Damage : MonoBehaviour
         }
     }
 
-    //this is just for taking damage from the lasers
+    /// <summary>
+    /// the only trigger the enemy can collide with is the laser so this is just for taking damge from the laser
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Laser")
@@ -58,7 +69,10 @@ public class Damage : MonoBehaviour
         }
     }
 
-    //destroys it self and if true adds score
+    /// <summary>
+    /// adds score depending on if it was killed by the player and then destroys it self and puts an explosion in its place
+    /// </summary>
+    /// <param name="addScore"></param>
     public void Die(bool addScore)
     {
         if (addScore)
@@ -70,6 +84,9 @@ public class Damage : MonoBehaviour
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// this function is specifcly for whem a nuke kills all the enemys at once so you dot get any extra power ups
+    /// </summary>
     public void PowerUpDie()
     {
         sm.AddScore(score);
@@ -77,7 +94,10 @@ public class Damage : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //pushes the enemy backwards
+    /// <summary>
+    /// adds force backward to the enemy
+    /// </summary>
+    /// <param name="force"></param>
     public void PushBack(float force)
     {
         rb.AddForce((transform.forward * -1) * force, ForceMode.Impulse);

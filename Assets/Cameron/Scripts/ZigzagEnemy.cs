@@ -11,13 +11,17 @@ public class ZigzagEnemy : MonoBehaviour
     private float timer;
     public float zag;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// sets the timer based off of distance from the center to keep the zigs and zags equal
+    /// </summary>
     void Start()
     {
         timer = (Vector3.Distance(target.position, transform.position) / sideSpeed) * zag;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// looks at the center moves forwards and uses the timer to change sideways directions and sets that timer based off of the distance to the center
+    /// </summary>
     void Update()
     {
         //moves the enemy towards the centre

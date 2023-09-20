@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
 using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class Sword : MonoBehaviour

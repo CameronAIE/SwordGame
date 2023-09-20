@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject DebugMenu, PauseMenu, DeathMenu;
+    [SerializeField] private GameObject DebugMenu, PauseMenu, DeathMenu, pauseButton, pauseTxt;
     [SerializeField] private SphereManager sphereManager;
     [SerializeField] private TextMeshProUGUI endScore;
     private bool DebugMode;
@@ -46,7 +46,14 @@ public class GameManager : MonoBehaviour
         DebugMode = false;
         PauseMenu.SetActive(false);
         gameState = GameState.Active;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
+
+#if UNITY_STANDALONE || UNITY_WEBGL
+    pauseButton.SetActive(false);
+#endif
+#if UNITY_ANDROID
+    pauseTxt.SetActive(false);
+#endif
     }
 
     // Update is called once per frame
@@ -126,12 +133,13 @@ public class GameManager : MonoBehaviour
             case GameState.Paused:
                 Time.timeScale = 1;
                 gameState = GameState.Active;
-                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.lockState = CursorLockMode.Locked;
                 PauseMenu.SetActive(false);
                 break;
             case GameState.Active:
                 Time.timeScale = 0;
                 gameState = GameState.Paused;
+                Cursor.lockState = CursorLockMode.None;
                 PauseMenu.SetActive(true);
                 break;
             default: break;

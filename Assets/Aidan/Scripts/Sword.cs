@@ -72,7 +72,7 @@ public class Sword : MonoBehaviour
     {
         if (inputType)
         {
-            Vector2 input = new(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+            Vector2 input = new(Input.GetAxisRaw("Mouse X") * Time.timeScale, Input.GetAxisRaw("Mouse Y") * Time.timeScale);
 
             cursorObject.transform.position = new(Mathf.Clamp(cursorObject.transform.position.x + input.x, -9, 9), Mathf.Clamp(cursorObject.transform.position.y + input.y, -5, 5), -0.5f);
         }

@@ -44,40 +44,34 @@ public class Sword : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         hj = transform.GetComponentInParent<HingeJoint>();
         pivot = transform.parent;
-        if (inputType)
-        {
-            cursorObject = Instantiate(cursorPrefab);
-        }
+    #if UNITY_STANDALONE || UNITY_WEBGL
+        cursorObject = Instantiate(cursorPrefab);
+    #endif
     }
 
     private void FixedUpdate()
     {
-        //if the regular input type is used
-        if(!inputType)
-        {
-            //the position the sword is required to go
-            Vector3 swordPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
-      Input.mousePosition.y, Camera.main.nearClipPlane + 9));
-            //updates the current position of the sword and smooths it with linear interpolation
-            hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, swordPos, Time.deltaTime * smoothVal);
-        }
-        else //virtual cursor method
-        {
-            hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, cursorObject.transform.position, Time.deltaTime * smoothVal);
-        }
+    #if UNITY_ANDROID
+        //the position the sword is required to go
+        Vector3 swordPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
+        Input.mousePosition.y, Camera.main.nearClipPlane + 9));
+        //updates the current position of the sword and smooths it with linear interpolation
+        hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, swordPos, Time.deltaTime * smoothVal);
+    #endif
+    #if UNITY_STANDALONE || Unity_WEBGL
+        hj.connectedAnchor = Vector3.Lerp(hj.connectedAnchor, cursorObject.transform.position, Time.deltaTime * smoothVal);
+    #endif
     }
-
 
     // Update is called once per frame
     void Update()
     {
-        if (inputType)
-        {
-            Vector2 input = new((Input.GetAxisRaw("Mouse X") / dampner) * Time.timeScale, (Input.GetAxisRaw("Mouse Y") / dampner) * Time.timeScale);
+    #if UNITY_STANDALONE || Unity_WEBGL
+        Vector2 input = new((Input.GetAxisRaw("Mouse X") / dampner) * Time.timeScale, (Input.GetAxisRaw("Mouse Y") / dampner) * Time.timeScale);
 
-            cursorObject.transform.position = new(Mathf.Clamp(cursorObject.transform.position.x + input.x, -9, 9), Mathf.Clamp(cursorObject.transform.position.y + input.y, -5, 5), -0.5f);
-        }
-        
+        cursorObject.transform.position = new(Mathf.Clamp(cursorObject.transform.position.x + input.x, -9, 9), Mathf.Clamp(cursorObject.transform.position.y + input.y, -5, 5), -0.5f);
+    #endif
+
 
 
         //if sizetimer (set by GrowSword function) is greater than 0, increase the size of the sword via linear interpolation

@@ -46,13 +46,15 @@ public class GameManager : MonoBehaviour
         DebugMode = false;
         PauseMenu.SetActive(false);
         gameState = GameState.Active;
-        Cursor.lockState = CursorLockMode.Locked;
+
 
 #if UNITY_STANDALONE || UNITY_WEBGL
     pauseButton.SetActive(false);
+    Cursor.lockState = CursorLockMode.Locked;
 #endif
 #if UNITY_ANDROID
-    pauseTxt.SetActive(false);
+        pauseTxt.SetActive(false);
+        
 #endif
     }
 
@@ -133,7 +135,9 @@ public class GameManager : MonoBehaviour
             case GameState.Paused:
                 Time.timeScale = 1;
                 gameState = GameState.Active;
+#if UNITY_STANDALONE || UNITY_WEBGL
                 Cursor.lockState = CursorLockMode.Locked;
+#endif
                 PauseMenu.SetActive(false);
                 break;
             case GameState.Active:
